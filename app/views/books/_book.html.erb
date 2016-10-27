@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <%= link_to book_path(book) do %>
+        <%= image_tag "rails5.jpg", class: "img-responsive" %>
+      <% end %>
+      <div class="caption">
+        <%= link_to book.name, book_path(book) %>
+        <p>$ <%= book.price / 100.0 %></p>
+      </div>
+    </div>
+  </div>
+</div>
