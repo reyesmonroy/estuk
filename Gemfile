@@ -43,6 +43,10 @@ gem 'devise'
 
 # Use cancan for authorization
 gem 'cancan'
+
+# Use paperclip for file upload
+gem 'paperclip'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
