@@ -41,4 +41,8 @@ Rails.application.configure do
 
   # As per instructions from devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+
+  # for assets
+  # config.action_controller.asset_host = 'https://play.minio.io:9000'
 end
