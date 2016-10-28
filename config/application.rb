@@ -22,5 +22,40 @@ module Estuk
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+  
+=begin
+    config.paperclip_defaults = {
+      storage: :s3,
+      s3_credentials: {
+        access_key_id: ENV['MINIO_ACCESS_KEY_ID'],
+        secret_access_key: ENV['MINIO_SECRET_ACCESS_KEY']
+      },
+      s3_region: 'us-east-1',
+      bucket: ENV['MINIO_BUCKET'],
+      url: ':s3_alias_url',
+      s3_host_alias: '139.59.27.9:9000', 
+      path: "/:class/:id.:style.:extension"
+    } 
+=end
+
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_protocol: ':https',
+    s3_permissions: 'public',
+    s3_region: 'us-east-1', #ENV.fetch("AWS_REGION"),    
+    s3_credentials: {
+      bucket: 'stukdevelopment', #ENV.fetch("AWS_BUCKET"),
+      access_key_id: 'Q3AM3UQ867SPQQA43P2F',#ENV.fetch("AWS_ACCESS_KEY_ID"),
+      secret_access_key: 'zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG', #ENV.fetch("AWS_SECRET_ACCESS_KEY"),
+    },
+    s3_host_name: 'play.minio.io:9000',    
+    s3_options: {
+      endpoint: "https://play.minio.io:9000", # for aws-sdk
+      force_path_style: true # for aws-sdk (required for minio)
+    },
+    url: ':s3_path_url',
+    path: "/:class/:id.:style.:extension"    
+  }
   end
 end
