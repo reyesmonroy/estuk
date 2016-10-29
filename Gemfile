@@ -57,6 +57,10 @@ gem 'aws-sdk', '~> 2'
 # use friendly id for better urls
 gem 'friendly_id'
 
+
+# use strip for payments
+gem 'stripe'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

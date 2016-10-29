@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'transactions/create'
+
+  get 'transactions/pickup'
+
   resources :books
   devise_for :users
   get 'pages/home'
