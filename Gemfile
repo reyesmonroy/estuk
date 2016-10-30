@@ -47,6 +47,8 @@ gem 'cancan'
 # Use paperclip for file upload
 gem 'paperclip'
 
+gem 'rails_12factor', group: :production
+
 # Use dotenv for loading environment variables from .env
 gem 'dotenv-rails', groups: [:development] 
 

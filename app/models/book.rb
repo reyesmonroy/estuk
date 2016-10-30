@@ -4,6 +4,8 @@ class Book < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :sales
+
   # These are paperclip resources
   has_attached_file :image
   has_attached_file :resource

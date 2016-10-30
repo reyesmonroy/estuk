@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'transactions/create'
+  post '/buy/:slug', to: 'transactions#create', as: :buy
 
-  get 'transactions/pickup'
+  get '/pickup/:guid', to: 'transactions#pickup', as: :pickup
 
   resources :books
   devise_for :users
