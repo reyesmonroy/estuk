@@ -63,6 +63,10 @@ gem 'friendly_id'
 # use strip for payments
 gem 'stripe'
 
+
+# Use aasm for maintaining transaction state machine
+gem 'aasm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
