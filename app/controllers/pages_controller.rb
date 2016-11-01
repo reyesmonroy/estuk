@@ -9,5 +9,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @books = current_user.books    
+    @purchased = Sale.where(buyer_email: current_user.email).order(created_at: :desc)
+    @sales = Sale.where(seller_email: current_user.email).order(created_at: :desc)
   end
 end
