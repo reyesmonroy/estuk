@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,10 +45,10 @@ gem 'cancan'
 # Use paperclip for file upload
 gem 'paperclip'
 
-gem 'rails_12factor', group: :production
-
-# Use dotenv for loading environment variables from .env
-gem 'dotenv-rails', groups: [:development] 
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
 
 # Use aws-sdk for minio buckets
@@ -78,5 +76,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'sqlite3'
+
+  gem 'dotenv-rails'
 end
 
